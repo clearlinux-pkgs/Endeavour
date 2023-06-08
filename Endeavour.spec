@@ -5,7 +5,7 @@
 #
 Name     : Endeavour
 Version  : 43.0
-Release  : 1
+Release  : 2
 URL      : https://gitlab.gnome.org/World/Endeavour/-/archive/43.0/Endeavour-43.0.tar.gz
 Source0  : https://gitlab.gnome.org/World/Endeavour/-/archive/43.0/Endeavour-43.0.tar.gz
 Summary  : No detailed summary available
@@ -95,7 +95,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1686074944
+export SOURCE_DATE_EPOCH=1686233105
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -119,6 +119,8 @@ mkdir -p %{buildroot}/usr/share/package-licenses/Endeavour
 cp %{_builddir}/Endeavour-%{version}/COPYING %{buildroot}/usr/share/package-licenses/Endeavour/338650eb7a42dd9bc1f1c6961420f2633b24932d || :
 DESTDIR=%{buildroot} ninja -C builddir install
 %find_lang endeavour
+## Remove excluded files
+rm -f %{buildroot}*/usr/lib64/pkgconfig/endeavour.pc
 
 %files
 %defattr(-,root,root,-)
@@ -181,7 +183,6 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/include/endeavour/gtd-widget.h
 /usr/include/endeavour/gtd-window.h
 /usr/include/endeavour/gtd-workspace.h
-/usr/lib64/pkgconfig/endeavour.pc
 
 %files doc
 %defattr(0644,root,root,0755)
