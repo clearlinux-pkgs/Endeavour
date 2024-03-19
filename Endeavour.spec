@@ -7,7 +7,7 @@
 #
 Name     : Endeavour
 Version  : 43.0
-Release  : 3
+Release  : 4
 URL      : https://gitlab.gnome.org/World/Endeavour/-/archive/43.0/Endeavour-43.0.tar.gz
 Source0  : https://gitlab.gnome.org/World/Endeavour/-/archive/43.0/Endeavour-43.0.tar.gz
 Summary  : No detailed summary available
